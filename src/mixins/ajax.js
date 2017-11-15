@@ -42,7 +42,9 @@ module.exports = {
 			if (this.search.length > 0) {
 				this.onSearch(this.search, this.toggleLoading)
         this.$emit('search', this.search, this.toggleLoading)
-      }
+      } else {
+				this.$emit('search:clear', this.toggleLoading)
+			}
 		},
     /**
 		 * Sync the loading prop with the internal

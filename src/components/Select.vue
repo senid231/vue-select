@@ -562,6 +562,11 @@
         type: String,
         default: 'auto'
       },
+
+      allowClear: {
+        type: Boolean,
+        default: true
+      }
     },
 
     data() {
@@ -650,7 +655,7 @@
        * @return {void}
        */
       select(option) {
-        if (this.isOptionSelected(option)) {
+        if (this.isOptionSelected(option) && this.allowClear) {
           this.deselect(option)
         } else {
           if (this.taggable && !this.optionExists(option)) {
